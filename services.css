@@ -55,7 +55,7 @@ body {
 }
 
 ul li a:hover {
-    color: rgb(28, 125, 194);
+    color: rgb(194, 28, 28);
     transition-delay: 0.07s;
 }
 
@@ -121,7 +121,7 @@ ul li a:hover {
 }
 
 .content h1 {
-    color: rgb(20, 110, 200);
+    color: rgb(200, 20, 20);
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -139,12 +139,12 @@ ul li a:hover {
 }
 
 .content a {
-    color:rgb(0, 136, 255);
+    color:rgb(255, 0, 0);
     text-decoration: none;
 }
 
 .content a:hover{
-    color:rgb(33, 94, 163);
+    color:rgb(255, 254, 254);
 }
 
 .scroll-container{

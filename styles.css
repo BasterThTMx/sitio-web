@@ -8,25 +8,21 @@
 
 body {
     margin: 0;
+    overflow: hidden;
 }
 
 .banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(images/banner.jpg);
-    background-position: center;
-    min-height: 100vh;
     width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .navbar {
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: black;
     padding: 10px 20px;
+    overflow: hidden;
 }
 
 .logo {
@@ -37,6 +33,7 @@ body {
 .navbar ul {
     list-style: none;
     display: flex;
+    margin-right: 0px;
 }
 
 .navbar ul li {
@@ -56,15 +53,120 @@ body {
 }
 
 ul li a:hover {
-    color: rgb(48, 111, 187);
+    color: rgb(185, 28, 28);
     transition-delay: 0.07s;
 }
+
+.slider-frame {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+@keyframes slide_animation {
+    0% {left: 0;}
+    10% {left: 0;}
+    20% {left: 0;}
+    30% {left: -100vw;}
+    40% {left: -100vw;}
+    50% {left: -200vw;}
+    60% {left: -200vw;}
+    70% {left: -100vw;}
+    80% {left: -100vw;}
+    90% {left: 0;}
+    100% {left: 0;}
+}
+
+@-webkit-keyframes slide_animation {
+    0% {left: 0;}
+    10% {left: 0;}
+    20% {left: 0;}
+    30% {left: -100vw;}
+    40% {left: -100vw;}
+    50% {left: -200vw;}
+    60% {left: -200vw;}
+    70% {left: -100vw;}
+    80% {left: -100vw;}
+    90% {left: 0;}
+    100% {left: 0;}
+}
+
+.slide-images {
+    width: 300vw;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    display: flex;
+    overflow: hidden; /* Añadido */
+    -webkit-animation-name: slide_animation;
+    animation-name: slide_animation;
+    -webkit-animation-duration: 13s;
+    animation-duration: 13s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+
+.img-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.img-container img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.img-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Aquí ajusta la opacidad según tus preferencias */
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* Estilo para mostrar la imagen banner4 solo en dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .content {
+        bottom: -25%;
+    }
+
+    .first-image img:not(.mobile-only) {
+        display: none;
+    }
+
+    .first-image img.mobile-only {
+        display: block;
+    }
+    
+    .third-image img:not(.mobile-only) {
+        display: none;
+    }
+
+    .third-image img.mobile-only {
+        display: block;
+    }
+}
+
 
 .content {
     width: 100%;
     position: absolute;
     text-align: center;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     color: white;
 }
