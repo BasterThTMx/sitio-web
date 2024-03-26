@@ -46,14 +46,14 @@ body {
     font-style: normal;
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
+    color: rgb(206, 181, 39);
     font-size: 16px;
     transition: color 0.5s ease-in-out;
 
 }
 
 ul li a:hover {
-    color: rgb(185, 28, 28);
+    color: rgb(255, 255, 255);
     transition-delay: 0.07s;
 }
 
